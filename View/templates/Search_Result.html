@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stylesheets/styles.css')}}">
+  <title>Search Results</title>
+</head>
+<body>
+<nav>
+    <ul>
+      <li class="right"><a href="{{ url_for('file_upload') }}">File Upload</a></li>
+      <li class="right"><a href="{{ url_for('homepage') }}">Home</a></li>
+    </ul>
+  </nav>
+  <h2>Search Results</h2>
+   {% if Web_links %}
+    <ul id="results">
+      {% for link in Web_links %}
+        <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p id="no-results-message">No results found</p>
+  {% endif %}
+  </ul>
+</body>
+</html>

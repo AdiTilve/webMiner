@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stylesheets/styles.css')}}">
+  <title>Cyberminer Search Engine</title>
+  <script>
+function validateForm() {
+    var keywords = document.getElementById('keywords').value.trim();
+
+    if (keywords === "") {
+        alert("Please enter keywords to search.");
+        return false; // Prevent form submission
+    }
+
+    return true; // Continue with form submission
+}
+</script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="right"><a href="{{ url_for('file_upload') }}">File Upload</a></li>
+      <li class="right"><a href="{{ url_for('homepage') }}">Home</a></li>
+    </ul>
+  </nav>
+  <h2>Welcome to Webminer</h2>
+  <form onsubmit="return validateForm()" action="/search" method="post">
+    <input type="text" id="keywords" name="keywords" placeholder="Enter keywords...">
+    <input type="submit" name="submit" value="Search">
+  </form>
+</body>
+</html>
