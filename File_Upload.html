@@ -24,7 +24,7 @@
   <nav>
     <ul>
       <li class="right"><a href="File_Upload.html">File Upload</a></li>
-      <li class="right"><a href="{{ url_for('homepage') }}">Home</a></li>
+      <li class="right"><a href="index.html">Home</a></li>
     </ul>
   </nav>
   <h1>Upload File</h1>
@@ -34,10 +34,6 @@
     <button type="submit" class="blue-button" >Upload</button>
     <p id="file-name"></p>
   </form>
-  {% if file_uploaded %}
-    <p style="text-align: center; color: green;">File uploaded successfully!</p>
-  {% endif %}
-
   <script>
     function displayFileName() {
       const fileInput = document.getElementById('file');
