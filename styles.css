@@ -1,0 +1,136 @@
+/* Apply basic styles to the body and text */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the navigation bar */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin: 0 20px;
+}
+
+/* Adjust the "File Upload" and "Home" links to the upper-right corner */
+nav li.right {
+  float: right;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Style the headings */
+h1, h2 {
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Style the file input and label to create a custom file upload button */
+input[type="file"] {
+  display: none; /* Hide the file input */
+}
+
+label.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue button color */
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px;
+}
+
+/* Style the "Upload" button */
+button.blue-button, input[type="submit"] {
+  background-color: #007bff; /* Blue button color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s; /* Smooth color transition on hover */
+}
+
+button.blue-button:hover, input[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Style the search form */
+form {
+  text-align: center;
+  margin: 20px auto;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style for displaying the selected file name */
+p#file-name {
+  text-align: center;
+  margin-top: 10px;
+  color: #007bff; /* Blue color for the file name */
+}
+/* Style the search results list */
+/* Style the search results list */
+ul#results {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px auto;
+}
+
+ul#results li {
+  background-color: #f0f0f0; /* Light gray background color for the list items */
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+ul#results li a {
+  color: #333; /* Dark gray color for the links in the list items */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+ul#results li a:hover {
+  text-decoration: underline;
+  color: #007bff; /* Blue color on hover for the links */
+}
+#no-results-message {
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
