@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stylesheets/styles.css')}}">
+  <title>Upload File</title>
+  <script>
+    function validateFileUpload() {
+      var fileInput = document.getElementById('file');
+      var fileName = fileInput.value;
+
+      if (fileName === "") {
+        alert("Please select a text file to upload.");
+        return false; // Prevent form submission
+      }
+
+      // You can add additional checks if needed
+
+      return true; // Continue with form submission
+    }
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="right"><a href="{{ url_for('file_upload') }}">File Upload</a></li>
+      <li class="right"><a href="{{ url_for('homepage') }}">Home</a></li>
+    </ul>
+  </nav>
+  <h1>Upload File</h1>
+  <form onsubmit="validateFileUpload()" action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="file" accept=".txt, .rtf" onchange="displayFileName()">
+    <label for="file" class="custom-file-upload">Choose a file</label>
+    <button type="submit" class="blue-button" >Upload</button>
+    <p id="file-name"></p>
+  </form>
+  {% if file_uploaded %}
+    <p style="text-align: center; color: green;">File uploaded successfully!</p>
+  {% endif %}
+
+  <script>
+    function displayFileName() {
+      const fileInput = document.getElementById('file');
+      const fileNameDisplay = document.getElementById('file-name');
+
+      if (fileInput.files.length > 0) {
+        const fileName = fileInput.files[0].name;
+        fileNameDisplay.innerText = 'Selected file: ' + fileName;
+      } else {
+        fileNameDisplay.innerText = ''; // Clear the text if no file is selected
+      }
+    }
+  </script>
+</body>
+</html>
